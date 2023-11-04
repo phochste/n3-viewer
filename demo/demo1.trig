@@ -1,0 +1,23 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix v: <http://example.com/.well-known/genid/d26a2d0e98334696f4ad70a677abc1f6> .
+
+# default graph
+    {
+      <http://example.org/bob> dc:publisher "Bob" .
+      <http://example.org/alice> dc:publisher "Alice" .
+    }
+
+<http://example.org/bob>
+    {
+       _:a foaf:name "Bob" .
+       _:a foaf:mbox <mailto:bob@oldcorp.example.org> .
+       _:a foaf:knows v:b .
+    }
+
+<http://example.org/alice>
+    {
+       v:b foaf:name "Alice" .
+       v:b foaf:mbox <mailto:alice@work.example.org> .
+    }	

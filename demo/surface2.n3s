@@ -1,0 +1,18 @@
+@prefix ex: <http://example.org/ns#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+@prefix v: <http://example.com/.well-known/genid/d26a2d0e98334696f4ad70a677abc1f6> .
+
+ex:Ghent a ex:City.
+
+# Every city is a human community
+(v:S) log:onNegativeSurface {
+    v:S a ex:City.
+    () log:onNegativeSurface {
+        v:S a ex:HumanCommunity.
+    }.
+}.
+
+# Query
+(_:S _:C) log:onQuerySurface {
+    _:S a _:C.
+}.

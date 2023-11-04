@@ -1,0 +1,17 @@
+@prefix ex: <http://example.org/ns#>.
+@prefix log: <http://www.w3.org/2000/10/swap/log#>.
+
+ex:Ghent a ex:City.
+
+# Every city is a human community
+(_:S) log:onNegativeSurface {
+    _:S a ex:City.
+    () log:onNegativeSurface {
+        _:S a ex:HumanCommunity.
+    }.
+}.
+
+# Query
+(_:S _:C) log:onQuerySurface {
+    _:S a _:C.
+}.
